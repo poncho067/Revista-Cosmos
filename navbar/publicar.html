@@ -9,46 +9,67 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/navbar/publicar.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
     <title>Publicar</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f0f0f0;
-      }
-
-      .container {
-        text-align: center;
-      }
-
-      form {
-        margin-top: 20px;
-      }
-
-      input[type="email"] {
-        padding: 8px;
-        width: 200px;
-      }
-
-      button {
-        padding: 8px 20px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        cursor: pointer;
-      }
-    </style>
   </head>
   <body>
+    <header class="header">
+      <div class="logo-container">
+        <a href="/" class="logo">HORIZONTE</a>
+        <div class="navbar__toggle" id="mobile-menu" aria-label="Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+      <div class="menu">
+        <div class="menu__container">
+          <div class="header__menu">
+            <div class="menu__item dropdown">
+              <div class="select" aria-haspopup="true" aria-expanded="false">
+                <span class="selected">TEMAS</span>
+                <div class="caret"></div>
+              </div>
+              <ul class="temas">
+                <li class="active">TEMAS</li>
+                <li>Ciencias Sociales</li>
+                <li>Humanidades</li>
+                <li>Ciencias Exactas</li>
+              </ul>
+            </div>
+            <div class="menu__item">
+              <a href="../navbar/publicar.html" class="menu__links">
+                PUBLICA TU ARTICULO
+              </a>
+            </div>
+            <div class="menu__item">
+              <a href="../navbar/subscribir.html" class="menu__links">
+                SUBSCRIBETE
+              </a>
+            </div>
+            <div class="menu__item">
+              <a href="../navbar/buscar.html" class="menu__links"
+                ><img class="searchimg" src="../icons/search.webp" alt="Search"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <div class="container">
-      <h1>Email Sender</h1>
+      <h1>PUBLICA TU ARTICULO</h1>
       <form id="emailForm">
-        <label for="email">Enter your email:</label>
+        <p>
+          Si deseas publicar un articulo te enviaremos un correo con los criterios e intrucciones para poder ser publicado.
+        </p>
+        <label for="email">Ingresa tu correo electronico:</label>
         <input
           type="email"
           id="email"
@@ -56,7 +77,7 @@
           autocomplete="email"
           required
         />
-        <button type="submit">Send Email</button>
+        <button type="submit">Confirmar</button>
       </form>
     </div>
     <script>
@@ -66,25 +87,58 @@
           e.preventDefault();
           const email = document.getElementById("email").value;
           const message = "This is a predetermined message.";
-
-          // You can use a service like EmailJS to send the email
-          // Here is an example using EmailJS (you need to sign up and get your own user ID, template ID, and service ID)
           emailjs
-            .send("service_lb041hj", "template_sj091fq", {
+            .send("service_lb041hj", "template_l3ydyzv", {
               to_email: email,
               message: message,
             })
             .then(
               function (response) {
                 console.log("Email sent!", response.status, response.text);
-                alert("Email sent successfully!");
               },
               function (error) {
                 console.error("Email failed to send!", error);
-                alert("Email failed to send. Please try again later.");
               }
             );
         });
+
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+
+  const select = dropdown.querySelector('.select');
+  const caret = dropdown.querySelector('.caret');
+  const menu = dropdown.querySelector('.temas');
+  const options = dropdown.querySelectorAll('.menu li');
+  const selected = dropdown.querySelector('.selected');
+  
+  select.addEventListener('click', () => {
+    select.classList.toggle('select-clicked');
+    caret.classList.toggle('caret-rotate');
+    menu.classList.toggle('menu-open');
+});
+
+options.forEach(option => {
+  option.addEventListener('click', () => {
+    selected.innerText = option.innerText;
+    select.classList.remove('select-clicked');
+    caret.classList.remove('caret-rotate');
+    menu.classList.remove('menu-open');
+    options.forEach(option => {
+      option.classList.remove('active');
+    });
+      option.classList.add('active');
+  });
+});
+});
+
+const hamburger = document.querySelector('.navbar__toggle');
+const menu = document.querySelector('.menu');
+
+hamburger.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
     </script>
+    <script src="../script.js"></script>
   </body>
 </html>

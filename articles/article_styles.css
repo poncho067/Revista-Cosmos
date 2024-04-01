@@ -1,8 +1,6 @@
 body {
   font-family: "Nunito Sans", sans-Serif;
   margin: 0 1rem;
-
-  
 }
 
 a {
@@ -27,6 +25,7 @@ a {
   font-size: 3rem;
   color: black;
   padding-left: 10px;
+  padding-left: 20px;
 }
 
 header {
@@ -55,6 +54,7 @@ header {
   list-style: none;
   text-align: center;
   box-shadow: 0 1px 2px lightgray;
+  padding-left: 15px;
 }
 
 .navbar__container {
