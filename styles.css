@@ -1,8 +1,6 @@
 body {
   font-family: "Nunito Sans", sans-Serif;
-  margin: 0 1rem;
-  padding-right: 15px;
-  
+  margin: 0 ;
 }
 
 a {
@@ -26,6 +24,7 @@ a {
   font-family: "Times New Roman", Times, serif;
   font-size: 3rem;
   color: black;
+  padding-left: 10px;
 }
 
 header {
@@ -33,6 +32,7 @@ header {
   background: white;
   position: fixed;
   width: 100%;
+  z-index: 1000;
 }
 
 /* Hamburger menu icon */
@@ -51,6 +51,7 @@ header {
   align-items: center;
   list-style: none;
   text-align: center;
+  box-shadow: 0 1px 2px lightgray;
 }
 
 .navbar__container {
@@ -132,11 +133,13 @@ header {
   justify-content: center;
   align-items: center;
   padding-top: 10px;
+  padding-left: 10px;
 }
 
 .header__menu {
   display: flex;
   gap: 20px;
+  padding-bottom: 5px;
 }
 
 .dropdown {
@@ -258,6 +261,8 @@ nav ul ul {
   padding-top: 100px;
   box-sizing: border-box; /* Ensure padding is included in width */
   overflow: hidden;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* Article container */
@@ -361,6 +366,9 @@ p {
   .article_2 {
     grid-column-end: span 3; /* Ensure article 2 spans 3 columns */
   }
+  .article_9 {
+    grid-column-end: span 2; /* Ensure article 1 spans 2 columns */
+  }
 }
 
 @media (max-width: 1023px) {
@@ -370,9 +378,32 @@ p {
   }
 }
 
-@media (min-width: 1440px) {
+
+@media (min-width: 1500px) {
   .wrapper {
     max-width: 100%; /* Adjust as needed */
+    margin: 0 auto; /* Center the content */
+  }
+}
+@media (min-width: 1227px) and (max-width: 1500px) {
+  /* Add the new styles here */
+  .article_8 {
+    grid-column-end: span 2; /* Ensure article 1 spans 2 columns */
+  }
+}
+
+@media (min-width: 1420px) {
+
+  .article_1 {
+    grid-column-end: span 2; /* Ensure article 1 spans 2 columns */
+  }
+  .article_5 {
+    grid-column-end: span 2;
+  }
+}
+@media (min-width: 1820px) {
+  .body__container {
+    max-width: 1819px;
     margin: 0 auto; /* Center the content */
   }
 }
@@ -402,6 +433,7 @@ p {
 @media (max-width: 635px) {
   .body__container {
     grid-template-columns: 1fr; /* Display as a single column */
+    padding-top: 100px;
   }
 
   .article_1,

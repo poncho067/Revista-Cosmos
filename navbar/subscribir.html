@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+  (function () {
+    emailjs.init("gfvT4qWJehJ7YKA1o");
+  })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter Signup</title>
+  <style>
+    /* Style for error message */
+    #emailError {
+      position: relative;
+      color: red;
+      font-size: 0.8em;
+      left: -275px;
+      top: 20px;
+    }
+    #emailResponse {
+      position: relative;
+      color: blue;
+      font-size: 0.8em;
+      left: -275px;
+      top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Subscribe to Our Newsletter</h1>
+  <form id="subscribeForm">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" autocomplete="email" required>
+    <button type="submit">Subscribe</button>
+    <span id="emailError"></span>
+    <span id="emailResponse"></span>
+  </form>
+
+  <script src="subscribir.js"></script>
+</body>
+</html>

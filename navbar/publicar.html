@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("gfvT4qWJehJ7YKA1o");
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publicar</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      input[type="email"] {
+        padding: 8px;
+        width: 200px;
+      }
+
+      button {
+        padding: 8px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Email Sender</h1>
+      <form id="emailForm">
+        <label for="email">Enter your email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          autocomplete="email"
+          required
+        />
+        <button type="submit">Send Email</button>
+      </form>
+    </div>
+    <script>
+      document
+        .getElementById("emailForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = document.getElementById("email").value;
+          const message = "This is a predetermined message.";
+
+          // You can use a service like EmailJS to send the email
+          // Here is an example using EmailJS (you need to sign up and get your own user ID, template ID, and service ID)
+          emailjs
+            .send("service_lb041hj", "template_sj091fq", {
+              to_email: email,
+              message: message,
+            })
+            .then(
+              function (response) {
+                console.log("Email sent!", response.status, response.text);
+                alert("Email sent successfully!");
+              },
+              function (error) {
+                console.error("Email failed to send!", error);
+                alert("Email failed to send. Please try again later.");
+              }
+            );
+        });
+    </script>
+  </body>
+</html>
