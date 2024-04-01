@@ -69,7 +69,6 @@ header {
 }
 
 @media screen and (max-width: 768px) {
-
   /* Show hamburger menu icon */
   .navbar__toggle {
     display: block;
@@ -129,7 +128,7 @@ header {
 
   body {
     margin: 0 1rem;
-    padding-right: 10px ; /* Updated padding */
+    padding-right: 10px; /* Updated padding */
   }
 
   .body__container {
@@ -261,7 +260,7 @@ nav ul ul {
   height: 15px;
 }
 
-#emailForm{
+#emailForm {
   display: flex;
   flex-direction: column;
 }

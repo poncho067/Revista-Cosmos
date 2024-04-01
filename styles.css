@@ -1,6 +1,6 @@
 body {
   font-family: "Nunito Sans", sans-Serif;
-  margin: 0 ;
+  margin: 0;
 }
 
 a {
@@ -67,7 +67,6 @@ header {
 }
 
 @media screen and (max-width: 768px) {
-
   /* Show hamburger menu icon */
   .navbar__toggle {
     display: block;
@@ -383,7 +382,6 @@ p {
   }
 }
 
-
 @media (min-width: 1500px) {
   .wrapper {
     max-width: 100%; /* Adjust as needed */
@@ -398,16 +396,15 @@ p {
 }
 
 @media (min-width: 1440px) {
-
   .article_1,
-.article_2,
-.article_4,
-.article_5,
-.article_7,
-.article_8,
-.article_9 {
-  grid-column-end: span 2;
-}
+  .article_2,
+  .article_4,
+  .article_5,
+  .article_7,
+  .article_8,
+  .article_9 {
+    grid-column-end: span 2;
+  }
 }
 @media (min-width: 1820px) {
   .body__container {
@@ -458,4 +455,3 @@ p {
     padding: 10px; /* Adjust padding */
   }
 }
-
